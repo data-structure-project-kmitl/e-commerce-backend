@@ -1,32 +1,24 @@
-## วิธี clone ไปทำต่อ
-1. git clone
-```powershell
-https://github.com/data-structure-project-kmitl/e-commerce-backend.git
-```
-2. สร้าง python env ด้วยคำสั่ง 
-```powershell
-python -m venv env 
-```
+วิธี clone ไปทำต่อ
+
+1. git clone https://github.com/data-structure-project-kmitl/e-commerce-backend.git
+
+2. สร้าง python env ด้วยคำสั่ง python -m venv env 
+
 3. activate env ด้วยคำสั่ง 
 - 3.1 (mac/linux) 
-```powershell
 source ./env/bin/activate
-```
+
 - 3.2 (windows) 
-```powershell
 .\env\Scripts\Activate.ps1
-```
+
 ** ถ้า Error : cannot be loaded because running scripts is disabled on this system. ให้ set execution policy ด้วยคำสั่ง 
-```powershell
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
-```
+
 4. ลง python lib ด้วย 
-```powershell
 pip install -r requirements.txt
-```
+
 5. run backend
-```powershell
 uvicorn main:app --reload
-```
+
 6. http://localhost:8000/docs
 
