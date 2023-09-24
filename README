@@ -37,21 +37,9 @@ uvicorn main:app --reload
 2. สร้าง python env ด้วยคำสั่ง python -m venv env 
 
 3. activate env ด้วยคำสั่ง 
-- 3.1 (mac/linux) 
-source ./env/bin/activate
-
-- 3.2 (windows) 
-.\env\Scripts\Activate.ps1
-
-** ถ้า Error : cannot be loaded because running scripts is disabled on this system. ให้ set execution policy ด้วยคำสั่ง 
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
-
-4. ลง python lib ด้วย 
-pip install -r requirements.txt
-
-5. run backend
-uvicorn main:app --reload
-
->>>>>>> e8465cfb6743623723e807a4df6451ce0016b595
+- 3.1 (mac/linux) source ./env/bin/activate
+- 3.2 (windows) .\env\Scripts\Activate.ps1
+4. ลง python lib ด้วย pip install -r requirements.txt
+5. รัน uvicorn main:app --reload
 6. http://localhost:8000/docs
 
