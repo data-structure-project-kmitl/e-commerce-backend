@@ -1,8 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter , Query , HTTPException , Body , Path
 from models.Product import Product
 from config.database import collections
 from schema.schemas import list_serial_product
 from bson import ObjectId
+from fastapi.encoders import jsonable_encoder
 from product_func import quick_sort , quick_sort_high_low , linear_search
 
 
@@ -53,15 +54,21 @@ async def delete_product(id: str):
     collections.find_one_and_delete({"_id": ObjectId(id)})
 
 @router.get("/search/product")
-async def search_product_by_name(product_name: str):
+async def search_product_by_name_or_type(product_name_or_type: str):
     # Access the 'product' collection
     products = list_serial_product(collections["product"].find())
 
     # Use linear search to find products with matching names
-    matching_products = linear_search(products, product_name)
+    matching_products = linear_search(products, product_name_or_type)
     
     # Sort the matching products by price using Quick Sort
     sorted_products = quick_sort(matching_products)
     
     # You can further process 'sorted_products' as needed
     return sorted_products
+
+
+    
+
+
+
