@@ -22,6 +22,7 @@ def quick_sort_high_low(arr):
 def linear_search(products, search_name):
     matching_products = []
     for product in products:
-        if search_name.lower() in product['name'].lower():
+        if search_name.lower() in product['name'].lower() or search_name.lower() in product.get('type', '').lower():
             matching_products.append(product)
     return matching_products
+

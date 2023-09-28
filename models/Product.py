@@ -6,4 +6,5 @@ class Product(BaseModel):
     price: float
     quantity: int
     type: str
+    image_base64: str
 

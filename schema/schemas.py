@@ -4,7 +4,9 @@ def individual_serial_product(Product) -> dict:
         "name": Product["name"],
         "price": Product["price"],
         "type": Product["type"],
-        "quantity": Product["quantity"]
+        "quantity": Product["quantity"],
+        "image_base64":Product["image_base64"]
+
     }
 
 
