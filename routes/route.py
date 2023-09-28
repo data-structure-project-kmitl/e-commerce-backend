@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-from fastapi import APIRouter ,Query , File, UploadFile , HTTPException
-=======
 from fastapi import APIRouter , Query , HTTPException , Body , Path
->>>>>>> 77b0932bf6792fb1419d7f2dbfe062252891130b
 from models.Product import Product
 from config.database import collections
 from schema.schemas import list_serial_product
 from bson import ObjectId
-<<<<<<< HEAD
-from product_func import quick_sort , quick_sort_high_low , linear_search 
-import base64
-=======
 from fastapi.encoders import jsonable_encoder
 from product_func import quick_sort , quick_sort_high_low , linear_search
->>>>>>> 77b0932bf6792fb1419d7f2dbfe062252891130b
 
 
 router = APIRouter()
@@ -103,26 +94,8 @@ async def search_product_by_name_or_type(product_name_or_type: str):
     # You can further process 'sorted_products' as needed
     return sorted_products
 
-<<<<<<< HEAD
-# @router.post("/")
-# async def post_product_with_image(
-#     product: Product,
-#     image: UploadFile  # Include an UploadFile parameter for image upload
-# ):
-#     # Process the image upload and store it, e.g., in a file storage service
-
-#     # Once the image is stored, set the image_url in the product
-#     product.image_url = ""  # Set the actual URL
-
-#     # Insert the product (including the image_url) into the database
-#     # collections["product"].insert_one(dict(product))
-
-#     # Return the product with the image URL
-#     return product
-=======
 
     
 
 
->>>>>>> 77b0932bf6792fb1419d7f2dbfe062252891130b
 
