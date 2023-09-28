@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 __pycache__/
 env/
+=======
+__pycache__
+env
+README
+>>>>>>> 77b0932bf6792fb1419d7f2dbfe062252891130b
