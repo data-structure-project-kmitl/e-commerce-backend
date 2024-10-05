@@ -3,8 +3,6 @@ from fastapi import APIRouter , Query , HTTPException , Body , Path ,UploadFile 
 from models.Product import Product , Cart
 from models.cart import CartItem
 from models.user import User
-from fastapi import APIRouter , Query , HTTPException , Body , Path
-from models.Product import Product
 from config.database import collections
 from schema.schemas import list_serial_product
 from bson import ObjectId
@@ -31,17 +29,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-
-
-
-
-
-
-
-from product_func import quick_sort , quick_sort_high_low , linear_search
-
 
 router = APIRouter()
 
@@ -139,9 +126,6 @@ async def search_product_by_name_or_type(product_name_or_type: str):
     
     # You can further process 'sorted_products' as needed
     return sorted_products
-
-
-
 
 
 shopping_cart = Cart(items=[])
@@ -314,10 +298,6 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
 
 
 
-
-
-
-    
 
 
 
