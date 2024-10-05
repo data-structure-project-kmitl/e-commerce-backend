@@ -3,6 +3,8 @@ from fastapi import APIRouter , Query , HTTPException , Body , Path ,UploadFile 
 from models.Product import Product , Cart
 from models.cart import CartItem
 from models.user import User
+from fastapi import APIRouter , Query , HTTPException , Body , Path
+from models.Product import Product
 from config.database import collections
 from schema.schemas import list_serial_product
 from bson import ObjectId
@@ -38,6 +40,7 @@ app.add_middleware(
 
 
 
+from product_func import quick_sort , quick_sort_high_low , linear_search
 
 
 router = APIRouter()
@@ -311,6 +314,10 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
 
 
 
+
+
+
+    
 
 
 
